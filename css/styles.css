@@ -107,6 +107,23 @@ header.transparent nav a:hover {
     height: 2px;
     margin: 6px;
     background-color: #a97c50;
+    transition: all 400ms ease-in-out;
+}
+
+.burger.abierto .barra {
+    background-color: white;
+}
+
+.burger.abierto .barra.superior {
+    transform: translateY(8px) rotateZ(45deg);
+}
+
+.burger.abierto .barra.media {
+    width: 0;
+}
+
+.burger.abierto .barra.inferior {
+    transform: translateY(-8px) rotateZ(-45deg);
 }
 
 @media (max-width: 620px) {
@@ -137,7 +154,9 @@ aside {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 60px;
     background-color: #424242;
+    transition: all 600ms ease-in-out;
 }
 
 aside.abierto {

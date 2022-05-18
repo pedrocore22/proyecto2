@@ -21,4 +21,5 @@ let burger = document.querySelector('.burger');
 
 burger.addEventListener('click', () => {
     aside.classList.toggle('abierto');
+    burger.classList.toggle('abierto');
 })
