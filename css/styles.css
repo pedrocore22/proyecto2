@@ -92,6 +92,39 @@ header.transparent nav a:hover {
     color: white;
 }
 
+/* Burger */
+
+.burger {
+    position: fixed;
+    top: 1.5rem;
+    left: 1rem;
+    z-index: 30;
+    display: none;
+}
+
+.burger .barra {
+    width: 30px;
+    height: 2px;
+    margin: 6px;
+    background-color: #a97c50;
+}
+
+@media (max-width: 620px) {
+    
+    header {
+        justify-content: flex-end;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+
 /* Aside */
 
 aside {
@@ -99,12 +132,16 @@ aside {
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -360px;
     z-index: 20;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #424242;
+}
+
+aside.abierto {
+    left: 0;
 }
 
 aside nav {

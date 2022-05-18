@@ -15,3 +15,10 @@ window.addEventListener('scroll', () => {
 document.querySelector('.copyright').innerHTML = '&copy; ' 
                                                + new Date().getFullYear() 
                                                + ' ACME S.A.'; 
+
+let aside = document.querySelector('aside');
+let burger = document.querySelector('.burger');
+
+burger.addEventListener('click', () => {
+    aside.classList.toggle('abierto');
+})
