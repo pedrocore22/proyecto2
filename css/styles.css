@@ -1,0 +1,490 @@
+/* Fuentes */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Reseteo */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Generales */
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 1260px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 440px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #67666e;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header */
+
+header {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 1rem;
+    display: flex;
+    background-color: white;
+    box-shadow: 1.5px 1.5px 4px #b3b3b3;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+header img {
+    height: 60px;
+}
+
+header nav a {
+    margin-left: 1rem;
+}
+
+header.transparent nav a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+header nav a.activo,
+header nav a:hover {
+    color: #a97c50;
+}
+
+header.transparent nav a.activo,
+header.transparent nav a:hover {
+    color: white;
+}
+
+/* Aside */
+
+aside {
+    width: 360px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #424242;
+}
+
+aside nav {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+aside nav a {
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+aside nav a.activo,
+aside nav a:hover {
+    color: white;
+}
+
+aside .copyright {
+    font-size: 0.8rem;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+/* Hero */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+@keyframes animacionHero {
+    0% {
+        opacity: 0;
+    }
+    12% {
+        opacity: 1;
+    }
+    35% {
+        transform: scale(1.15);
+    }
+    75% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.hero div {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    animation-name: animacionHero;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+}
+
+.hero div:nth-child(1) {
+    background-image: url('../img/front1.jpg');
+}
+.hero div:nth-child(2) {
+    background-image: url('../img/front2.jpg');
+    animation-delay: 6s;
+}
+.hero div:nth-child(3) {
+    background-image: url('../img/front3.jpg');
+    animation-delay: 12s;
+}
+
+.hero .hero-logo {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    animation: none;
+}
+
+.hero .hero-flecha {
+    width: 36px;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 720px) {
+    .hero .hero-logo {
+        width: 50%;
+    }
+}
+
+@media (max-width: 440px) {
+    .hero .hero-logo {
+        width: 70%;
+    }
+}
+
+/* Layout */
+
+#cookies {
+    display: block;
+    margin-top: -90px;
+    padding-bottom: 90px;
+}
+
+.fila {
+    max-width: 1440px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.fila#primera {
+    margin-top: 100vh;
+}
+
+.fila.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,360px);
+    grid-gap: 2rem;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.fila.contacto {
+    margin-top: 80px;
+}
+
+.col-100 {
+    width: 100%;
+    padding: 1rem;
+}
+
+.col-50 {
+    width: 50%;
+    padding: 1rem;
+}
+
+.col-33 {
+    width: 33.333333%;
+    padding: 1rem;
+}
+
+.col-25 {
+    width: 25%;
+    padding: 1rem;
+}
+
+@media (max-width: 620px) {
+    .fila {
+        flex-direction: column;
+    }
+    .col-50,
+    .col-33,
+    .col-25 {
+       width: 100%; 
+    }
+}
+
+/* Call to actions */
+
+.caja-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja-nav img {
+    width: 30%;
+    margin-bottom: 1rem;
+}
+
+/* Formularios */
+
+form {
+    padding: 1rem;
+}
+
+input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: 1.5px solid #a97c50;
+}
+
+input:focus {
+    outline: none;
+}
+
+input.usuario {
+    background-image: url('../img/user.svg');
+    background-repeat: no-repeat;
+    background-position: 0 3.5px;
+    padding-left: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+input.email {
+    background-image: url('../img/mail-bronce.svg');
+    background-repeat: no-repeat;
+    background-position: 0 3.5px;
+    padding-left: 1.9rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    width: 100%;
+}
+
+[type="checkbox"] {
+    display: none;
+}
+
+[type="checkbox"] + label::before {
+    content: url('../img/square.svg');
+    position: relative;
+    top: 5px;
+    padding-right: 5px;
+}
+
+[type="checkbox"]:checked + label::before {
+    content: url('../img/check-square.svg');
+}
+
+.buttons {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #a97c50;
+    color: white;
+    border: 1px solid #a97c50;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: all 300ms linear;
+}
+
+button:hover {
+    background-color: white;
+    color: #a97c50;
+}
+
+/* Cards */
+
+.card {
+    position: relative;
+    width: 360px;
+    border-radius: 0.3rem;
+    box-shadow: 2px 2px 4px grey;
+    overflow: hidden;
+}
+
+.img-card {
+    height: 240px;
+    overflow: hidden;
+}
+
+.img-card img {
+    max-width: initial; /* Eliminar el comportamiento por defecto */
+    height: 240px;
+}
+
+.footer-card {
+    height: 180px;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-card a {
+    align-self: flex-end; /* Esta propiedad permite modificar 
+                           un elemento hijo en flexbox en
+                           su eje secundario (en este caso y) */
+}
+
+/* Propiedad */
+
+.fila.propiedad {
+    max-width: initial;
+    padding: 1.5rem;
+    margin-top: 80px;
+    background-image: url('../img/property5.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.fila.propiedad .col-50 {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.fila.propiedad .col-50 h1 {
+    font-size: 1.6rem;
+    color: #a97c50;
+    margin-bottom: 0.5rem;
+}
+
+.fila.propiedad .col-50 p {
+    display: flex;
+    align-items: center;
+}
+
+.fila.propiedad .col-50 img {
+    height: 1.3rem;
+    margin-right: 0.4rem;
+}
+
+/* Footer  */
+
+footer {
+    background-color: #424242;
+}
+
+footer.fila {
+    max-width: none;
+    justify-content: center;
+}
+
+footer.fila .col-33 {
+    max-width: 477px;
+}
+
+footer p {
+    color: white;
+    font-size: 0.9rem;
+}
+
+footer p:first-child {
+    color:#a97c50;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+footer p img {
+    height: 16px;
+    margin-right: 5px;
+}
+
+footer .rrss {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .rrss img {
+    height: 36px;
+}
+
+footer .links {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .links a {
+    color: #a97c50;
+}
+
+footer .col-33:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+}
